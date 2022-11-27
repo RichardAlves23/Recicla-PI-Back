@@ -70,5 +70,11 @@ public class MaterialController {
 	}
 	
 	
+	@GetMapping("/material/type/{id}")
+	public ResponseEntity<List<Material>> listMaterialToType(@PathVariable Integer id){
+		return ResponseEntity.status(HttpStatus.OK).body(materialRepository.findByTypematerialId(id));
+	}
+	
+	
 	
 }
